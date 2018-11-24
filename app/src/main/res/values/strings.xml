@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HindiLoveSms</string>
+    <string name="division_name">Division Name</string>
+    <string name="title_activity_your">Your</string>
+    <string name="save">Save</string>
+    <string name="save_or_paste">आपका संदेश यहाँ पेस्ट करे या लिखे</string>
+    <string name="copy">Copy</string>
+</resources>
