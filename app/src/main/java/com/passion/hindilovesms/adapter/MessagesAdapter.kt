@@ -11,8 +11,6 @@ import kotlinx.android.synthetic.main.layout_message_row.view.*
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context.CLIPBOARD_SERVICE
-import android.support.v4.content.ContextCompat.getSystemService
-import android.support.v4.content.ContextCompat.startActivity
 import android.widget.Toast
 
 
@@ -51,21 +49,18 @@ class MessagesAdapter(var messages: List<String>) : RecyclerView.Adapter<Message
             it.context.startActivity(Intent.createChooser(sharingIntent, "Share via"))
         }
 
-        viewHolder.cvContainder.setOnClickListener {
+        viewHolder.cvContainer.setOnClickListener {
             val intent = Intent(it.context, SmsDetailActivity::class.java)
             intent.putExtra("message", lstMessages.get(position))
             it.context.startActivity(intent)
         }
-
-
     }
-
 
     inner class MessagesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val lblMessage = view.lblName
         val imgCopy = view.imgCopy
         val imgShare = view.imgShare
-        val cvContainder = view.cvContainer
+        val cvContainer = view.cvContainer
     }
 
 }
