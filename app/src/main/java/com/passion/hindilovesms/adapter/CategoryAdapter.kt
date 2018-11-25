@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import com.passion.hindilovesms.R
 import com.passion.hindilovesms.SMSActivity
 import com.passion.hindilovesms.model.Category
-import com.passion.hindilovesms.model.Division
 import kotlinx.android.synthetic.main.layout_divion_row.view.*
 
 class CategoryAdapter(division: List<Category>, category: Int) :
@@ -32,6 +31,7 @@ class CategoryAdapter(division: List<Category>, category: Int) :
         viewHolder.lblName.text = lstDivision.get(position).name
         viewHolder.cvContainer.setOnClickListener {
             val intent = Intent(it.context, SMSActivity::class.java)
+            intent.putExtra("mCat", lstDivision.get(position).name)
             intent.putExtra("catPosition", mCategory)
             intent.putExtra("position", position.plus(1))
             it.context.startActivity(intent)

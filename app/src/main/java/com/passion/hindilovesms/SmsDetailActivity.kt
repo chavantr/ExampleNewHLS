@@ -13,6 +13,9 @@ class SmsDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sms_detail)
         setSupportActionBar(toolbar)
         lblMessage.text = intent.extras.get("message").toString()
+
+        title = "Love Messages"
+
         fab.setOnClickListener {
 
         }

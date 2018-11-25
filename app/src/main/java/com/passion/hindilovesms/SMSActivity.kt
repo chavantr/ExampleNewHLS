@@ -13,6 +13,14 @@ class SMSActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sms)
+
+        if (intent.hasExtra("mCat")) {
+            title = intent.extras.get("mCat").toString()
+        } else {
+            title = "Love Messages"
+        }
+
+
         myDatabase = MyDatabase(this, "lovesms", null, 1)
         lstMessages.layoutManager = LinearLayoutManager(this)
         if (intent.hasExtra("catPosition")) {

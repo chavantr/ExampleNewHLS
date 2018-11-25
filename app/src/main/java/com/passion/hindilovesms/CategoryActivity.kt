@@ -12,6 +12,7 @@ class CategoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
+        title = "Love Messages"
         lstCategory.layoutManager = LinearLayoutManager(this)
 
         when (intent.extras.getInt("position")) {

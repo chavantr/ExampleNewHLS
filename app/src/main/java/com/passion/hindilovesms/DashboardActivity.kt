@@ -22,6 +22,7 @@ class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+        title = "Love Messages"
         myDatabase = MyDatabase(this, "lovesms", null, 1)
         lstDivision.layoutManager = LinearLayoutManager(this)
         lstDivision.adapter = DivisionAdapter(division)
