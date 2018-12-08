@@ -17,8 +17,8 @@ public class MyDatabase extends SQLiteAssetHelper {
         super(context, name, factory, version);
     }
 
-    public List<String> getUnionMessages() {
-        List<String> lstUnionMessage = new ArrayList<>();
+    public ArrayList<Object> getUnionMessages() {
+        ArrayList<Object> lstUnionMessage = new ArrayList<>();
         SQLiteDatabase database = getReadableDatabase();
         Cursor cursor = database.rawQuery("select vaue from hsutsav union select name from hscategory union select name from specialday", null);
         if (cursor.moveToFirst()) {
@@ -30,8 +30,8 @@ public class MyDatabase extends SQLiteAssetHelper {
     }
 
 
-    public List<String> getCategoryMessages(int category) {
-        List<String> lstUnionMessage = new ArrayList<>();
+    public ArrayList<Object> getCategoryMessages(int category) {
+        ArrayList<Object> lstUnionMessage = new ArrayList<>();
         SQLiteDatabase database = getReadableDatabase();
         Cursor cursor = database.rawQuery("SELECT name FROM hscategory where cate_id=" + category, null);
         if (cursor.moveToFirst()) {
@@ -43,8 +43,8 @@ public class MyDatabase extends SQLiteAssetHelper {
     }
 
 
-    public List<String> getUtsavMessages(int category) {
-        List<String> lstUnionMessage = new ArrayList<>();
+    public ArrayList<Object> getUtsavMessages(int category) {
+        ArrayList<Object> lstUnionMessage = new ArrayList<>();
         SQLiteDatabase database = getReadableDatabase();
         Cursor cursor = database.rawQuery("SELECT vaue FROM hsutsav where type_id=" + category, null);
         if (cursor.moveToFirst()) {
@@ -56,8 +56,8 @@ public class MyDatabase extends SQLiteAssetHelper {
     }
 
 
-    public List<String> getMessages(int category) {
-        List<String> lstUnionMessage = new ArrayList<>();
+    public ArrayList<Object> getMessages(int category) {
+        ArrayList<Object> lstUnionMessage = new ArrayList<>();
         SQLiteDatabase database = getReadableDatabase();
         Cursor cursor = database.rawQuery("SELECT name FROM specialday where cate_id=" + category, null);
         if (cursor.moveToFirst()) {
